@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Advanced Graphs and Charts for PHP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel=STYLESHEET type="text/css" href="../images/960.css" />
+<link rel=STYLESHEET type="text/css" href="../images/jpprodstyle.css" />
+</head>
+<body>
+
+<!-- Title area -->
+<div class='container_12 header'>
+  <div class='grid_4'>
+    <a href='http://www.jpowered.com'><img style='border-width: 0px;' src='../images/jpowered.gif' width='270' height='60' align='left' alt='JPowered.com' /></a>
+  </div>
+  <div class='grid_8 omega product_title'>
+    <h1>Advanced Graphs and Charts for PHP</h1>
+  </div>
+</div>
+
+<!-- top menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!-- main content -->
+<div class='container_12 main_content'>
+
+<div class='grid_9'>
+
+    <h1>Trouble Shooting Guide</h1>
+
+    <p>If you experience difficulties in getting the graph images to display then the following will help to establish the cause of the problem</p>
+
+    <h4>Error Log File</h4>
+    <p>In the event the graphing software encounters a problem it will write a message to an error log file. The Error Log File is located in <strong>./jpowered/graph/log/</strong></p>
+    <p>Hopefully the error messages in there will provide you with enough information to quickly resolve the issue. If not then please feel free to contact us at <a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">JPowered Support</a> and we will be happy to assist.</p>
+    <p>&nbsp;</p>
+
+    <h4>Check the Data and Config processes</h4>
+    <p>One of the most common problems is that either the Data or Config specified are not producing the result they
+       should be. This can quickly be checked by entering the URL to those processes directly into the browser
+       address bar</p>
+
+    <p>For example, if the IMG tag in your page is:-</p>
+<textarea class="jpcodeblock" style="width: 600px;">
+<img src="http://www.yourdomain.com/jpowered/graph/vertical-bar-graph.php?
+data=http://www.yourdomain.com/data/vbardata.php&
+config=http://www.yourdomain.com/vbarconfig.txt"
+width="500"
+height="400" />
+</textarea>
+    <p>then you would enter the following URLs directly into your browser address bar:-</p>
+<textarea class="jpcodeblock" style="width: 600px;">
+
+http://www.yourdomain.com/data/vbardata.php
+
+http://www.yourdomain.com/vbarconfig.txt
+
+</textarea>
+    <p>This will quickly provide you with an indication of whether the problem is with the directory paths or the processes themselves.
+       If all is fine with the data and config processes then you should proceed with the next step and run the graphing software in debug mode.</p>
+    <p>&nbsp;</p>
+
+
+    <h4>Debug Mode</h4>
+    <p>If the log files do not provide the answer then the next step is to run the graphing software in debug mode.
+       This is done by entering the URL of the IMG tag directly into browser address with an additional parameter added.</p>
+
+    <p>For example, if the IMG tag in your page is:-</p>
+<textarea class="jpcodeblock" style="width: 600px;">
+<img src="http://www.yourdomain.com/jpowered/graph/vertical-bar-graph.php?
+data=http://www.yourdomain.com/data/vbardata.php&
+config=http://www.yourdomain.com/vbarconfig.txt"
+width="500"
+height="400" />
+</textarea>
+    <p>then you would enter the following URL directly into your browser address bar:-</p>
+<textarea class="jpcodeblock" style="width: 600px;">
+http://www.yourdomain.com/jpowered/graph/vertical-bar-graph.php?data=http://www.yourdomain.com/data/vbardata.php&config=http://www.yourdomain.com/vbarconfig.txt&debug=true
+</textarea>
+<p>NOTE: the additional parameter added to the end of the url is "debug=true"<br />
+The additional parameter tells the graphing software to turn on error reporting and so error message will be
+displayed in the browser</p>
+    <p>Again, hopefully the error messages will provide you with enough information to quickly resolve
+       the issue. If not then please feel free to contact us at <a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">JPowered Support</a> and we will be happy to assist.</p>
+    <p>&nbsp;</p>
+
+    <h4>Relative URLs and Directory Paths</h4>
+    <p>Another common cause of problems can be confusion over the directory paths. By default all relative paths are
+       <strong>Relative to the Graphing Software and NOT the page</strong></p>
+    <p>This can be overridden by the addition of the parameter <strong>baseurl</strong><br />
+       For example, if your page containing the IMG tag is in your web root and you wish the data and config
+       parameters to be relative to this then the IMG tag would look like this:-</p>
+
+<textarea class="jpcodeblock" style="width: 600px;">
+<img src="http://www.yourdomain.com/jpowered/graph/vertical-bar-graph.php?
+baseurl=http://www.yourdomain.com/&
+data=./data/vbardata.php&
+config=vbarconfig.txt"
+width="500"
+height="400" />
+</textarea>
+
+    <p>This assumes that vbardata.php is located in the directory /data/ just below your web root and vbarconfig.txt is located in the web root.</p>
+    <p>&nbsp;</p>
+
+</div>
+
+<div class='grid_3'>
+
+
+    <p><a href="../index.htm">Package Index</a></p>
+    <p><a href="../demo/index.htm">Demo Index</a></p>
+    <p><a href="../documentation/index.htm">Documentation</a></p>
+    <p><a href="../documentation/troubleShooting.htm">Troubleshooting Guide</a></p>
+    <p><a href="http://www.jpowered.com/support.htm">Support</a></p>
+
+
+    <h4>Documentation Contents</h4>
+    <p><a href="../documentation/addingGraphsToPages.htm">Adding Graphs to Web Pages</a></p>
+    <p><a href="../documentation/configurationOptions.htm">Configuration Options and Parameters</a></p>
+    <p><a href="../documentation/graphData.htm">Supplying the Graph with Data</a></p>
+    <p><a href="../documentation/sampleImageTags.htm">Sample Image Tags</a></p>
+
+
+    <h4>Database Connections</h4>
+    <p><a href="databaseInformationFile.htm">Database Information method</a></p>
+    <p><a href="customDataFunction.htm">Custom Data Function</a></p>
+
+    <p>&nbsp;</p>
+    <p><a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">more Documentation Online here</a></p>
+
+
+
+
+    <p>&nbsp;</p>
+</div>
+
+
+
+</div>
+
+<div class='footer'>
+
+<!-- bottom menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="../documentation/index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!--  footer -->
+<div class='container_12'>
+  <div class="grid_12 mc">[<a href="http://www.jpowered.com/"> JPowered.com </a>] [<a href="http://www.jpowered.com/products.htm" title="More software components for web applications"> More Products </a>] [<a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">Support </a>]</div>
+  <div class="grid_12 cprt">Copyright &copy; 2011 - 2014 Neutron Solutions Limited - All rights reserved.</div>
+</div>
+
+</div>
+
+</body>
+</html>

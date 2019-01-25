@@ -1,0 +1,65 @@
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/config3.txt) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/config1.txt) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/data1.txt) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/data3.txt) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/config1.txt?saveimage=areagraph.png&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/data1.txt?saveimage=areagraph.png&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/config1.txt?saveimage=..%2F..%2Ftest%2Fareagraph.png&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/data1.txt?saveimage=..%2F..%2Ftest%2Fareagraph.png&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] imagepng() [<a href='function.imagepng'>function.imagepng</a>]: Unable to open '../../test/areagraph.png' for writing: No such file or directory
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/config1.txt?saveimage=..%2F..%2Ftest%2Fareagraph.png&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/data1.txt?saveimage=..%2F..%2Ftest%2Fareagraph.png&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] imagepng() [<a href='function.imagepng'>function.imagepng</a>]: Unable to open '../../test/areagraph.png' for writing: No such file or directory
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/config1.txt?saveimage=C%3A%5C1stNeutron%5CProducts%5CPHPGraphs%5Ctest&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/data1.txt?saveimage=C%3A%5C1stNeutron%5CProducts%5CPHPGraphs%5Ctest&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] imagepng() [<a href='function.imagepng'>function.imagepng</a>]: Unable to open 'C:\1stNeutron\Products\PHPGraphs\test' for writing: Permission denied
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/config1.txt?saveimage=C%3A%5C1stNeutron%5CProducts%5CPHPGraphs%5Ctest%5Careagraph.png&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 
+ 
+WARNING [2] file(http://127.0.0.1:80/advgraphext/jpowered/demo/areagraph/data1.txt?saveimage=C%3A%5C1stNeutron%5CProducts%5CPHPGraphs%5Ctest%5Careagraph.png&amp;PHPSESSID=7uohsgsvrnk3biqg2nvimrs4t6) [<a href='function.file'>function.file</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+
+ 

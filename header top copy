@@ -1,0 +1,51 @@
+ <div class="header-bottom">
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">	
+						<!-- <h1><a class="navbar-brand" href="index.html"><span class="one">F</span>etch<span class="one">V</span>illa</a></h1> -->
+						<a class="navbar-brand" href="index.php"><span class="one"><img src="images/logo/logo.png" style="width: 80%;"/></span></a> 
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="cl-effect-1" id="cl-effect-1">
+						<ul class="nav navbar-nav">
+							<li><a href="index.php">Home</a></li> 
+							<li><a href="aboutUs.php">About Us</a></li> 
+							<li><a href="all_lands.php">Property</a></li>
+							<li><a href="gallery.php">Gallery</a></li>
+							<li><a href="gallery.php">FAQ'S</a></li>
+							<li><a href="contactus.php">Contact Us</a></li>
+							&nbsp;&nbsp;&nbsp;
+						</ul>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+			<div class="w3ls_search">
+			<!--
+				<div class="cd-main-header">
+					<ul class="cd-header-buttons">
+						<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+					</ul>  
+				</div>
+				
+				<div id="cd-search" class="cd-search">
+					<form action="#" method="post">
+						<input name="Search" type="search" placeholder="Search...">
+					</form>
+				</div>
+				-->
+			</div>
+	
+		</div>
+	</div>

@@ -1,0 +1,69 @@
+<!-- Chart Characteristics -->
+width: 550
+height: 400
+ndecplaces: 0
+pecentndecplaces: 0
+depth3d:    30
+3dangle:    40
+
+<!-- Chart Switches -->
+3d:                 true
+displayPercentages: true
+labellines:         false
+
+quality: very high
+
+<!-- Segment Labels -->
+segmentlabels:          true
+segmentlabelfont:       arial
+segmentlabelfontsize:   10
+segmentlabelfontbold:   false
+segmentlabelfontitalic: false
+segmentlabelcolor:      #000088
+
+
+<!-- Popup segment Value Pre & Post Symbols -->
+valuepresym: $
+
+<!-- thousand seperater -->
+thousandseparator: ,
+
+<!-- Additional color information -->
+backgroundcolor:      #FFFFFF
+
+<!-- Title --> 
+titletext:     2008 Total Sales
+titlefont:     arial
+titlefontsize: 14
+titlecolor:    #000000
+titleposition: -1,60
+
+<!-- Legend Information -->
+legend:            true
+legendfont:        arial
+legendfontsize:    11
+legendfontbold:    false
+legendfontitalic:  false
+legendposition:    -1,80
+legendtitle:       
+legendbgcolor:     #FFFFFF
+legendbordercolor: #DDDDDD
+legendtextcolor:   #202020
+legendstyle:       horizontal
+
+<!-- Pie Data --> 
+<!--  PieN   x,y|size|seperation -->
+pie1: 250,240|220|10
+
+<!-- segment Data --> 
+<!-- segmentN       series color|legend label| -->
+segment1: #0000FF|Blue Robots|
+segment2: #88FF00|Green Robots|
+segment3: #FF2E00|Red Robots|
+segment4: #FFB200|Yellow Robots|
+
+
+
+
+
+

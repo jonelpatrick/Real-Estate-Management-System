@@ -1,0 +1,15 @@
+data1series1:   2000
+data2series1:   2400
+data3series1:   2300
+data4series1:   5550
+
+data1series2:   4100
+data2series2:   3200
+data3series2:   3600
+data4series2:   4750
+
+data1series3:   8300
+data2series3:   2100
+data3series3:   1200
+data4series3:   7000
+

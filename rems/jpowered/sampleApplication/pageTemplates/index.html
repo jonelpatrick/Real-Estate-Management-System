@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Set Up Page</title>
+<LINK REL=STYLESHEET TYPE="text/css" HREF="./pageTemplates/sampleApplication.css">
+</head>
+<body>
+
+<h1>Robot Corporation</h1>
+<h3>Sample Sales Reporting Application</h3>
+
+<p></p>
+
+<!-- NOTE: the dbinfo and config file paths are relative to the graph code not the page -->
+<!--
+<img src="../graph/vertical-bar-graph.php?
+dbinfo=../sampleApplication/dataQueries/homePagedbConfig.php&
+config=../sampleApplication/graphConfig/homePageVbar.txt"
+width="550"
+height="400">
+-->
+
+<!-- NOTE: the dbinfo and config file paths are relative to the graph code not the page -->
+<img src="../graph/pie-chart.php?
+dbinfo=../sampleApplication/dataQueries/homePagedbConfig.php&
+config=../sampleApplication/graphConfig/homePagePieChart.txt"
+width="550"
+height="400">
+
+<div class="linkArea">
+<p>The chart above shows the total sales during 2008 for each product type.</p>
+<a href="salesByMonth.html">Sales by Month &raquo;</a><br>
+<a href="salesByMonthStacked.html">Sales by Month - Stacked Bars &raquo;</a><br>
+<a href="salesByRegion.html">Sales by Region &raquo;</a><br>
+<a href="salesByRegionStacked.html">Sales by Region - Stacked Cylinders &raquo;</a><br>
+</div>
+
+<div class="codeInfoBlock">
+
+<h2>Page Notes</h2>
+
+<p>The graph above is produced using the "Database Info" method with the following IMG tag:-<br>
+<textarea>
+<img src="../graph/pie-chart.php?
+dbinfo=../sampleApplication/dataQueries/homePagedbConfig.php&
+config=../sampleApplication/graphConfig/homePagePieChart.txt"
+width="550"
+height="400">
+</textarea>
+</p>
+
+<p>The graph data is read directly from the database using the information contained in the file:-<br>
+<textarea style="height: 20px;">
+/sampleApplication/dataQueries/homePagedbConfig.php
+</textarea>
+</p>
+
+<p>The settings and styles are set from the information contained in the file:-<br>
+<textarea style="height: 20px;">
+/sampleApplication/graphConfig/homePagePieChart.txt
+</textarea>
+</p>
+
+</div>
+
+
+<div style="width: 700px; padding: 8px; background-color: #FFE57F; border-width: 1px; border-color: #544E38; border-style: solid; margin: 4px;">
+<h2>Next Steps</h2>
+
+<h4>Documentation Contents</h4>
+<a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/index.htm">Documentation &raquo;</a><br>
+<a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/addingGraphsToPages.htm">Adding Graphs to Web Pages &raquo;</a><br>
+<a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/configurationOptions.htm">Configuration Options and Parameters &raquo;</a><br>
+<a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/graphData.htm">Supplying the Graph with Data &raquo;</a><br>
+
+<h4>Database Connections</h4>
+<a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/databaseInformationFile.htm">Database Information method &raquo;</a><br>
+<a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/customDataFunction.htm">Custom Data Function &raquo;</a><br>
+
+<h4>Also see:-</h4>
+
+<a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/">Online Tutorials &raquo;</a><br>
+<a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">Online Documentation &raquo;</a><br>
+
+If you encounter any problems then please feel free to contact <a href="http://www.jpowered.com/support.htm">JPowered Support &raquo;</a>.
+</div>
+
+</body>
+</html>

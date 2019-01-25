@@ -1,0 +1,48 @@
+width: 700
+height: 400
+
+3d: true
+depth3d: 10
+
+ndecplaces: 0
+
+thousandseparator: ,
+backgroundcolor:   #ffffff
+barspacing:        1
+barwidth:          10
+displaybarvalues:  false
+gradientfill:      true
+
+vspace: 40
+
+ylabelpre: $
+
+series1: #0000FF|Blue Robots|left
+series2: #88FF00|Green Robots|left
+series3: #FF2E00|Red Robots|left
+series4: #FFB200|Yellow Robots|left
+
+xlabels:           January|February|March|April|May|June|July|August|September|October|November|December 
+xlabelorientation: up angle
+xlabelcolor:       #000000
+xlabelfont:        arial
+xlabelfontsize:    10
+xlabelfontbold:    false
+xlabelfontitalic:  false
+
+
+<!-- Legend Information -->
+legend:            true
+legendfont:        arial
+legendfontsize:    11
+legendfontbold:    false
+legendfontitalic:  false
+legendposition:    -1,80
+legendtitle:       
+legendbgcolor:     #FFFFFF
+legendbordercolor: #DDDDDD
+legendtextcolor:   #202020
+legendstyle:       horizontal
+
+
+target: 75000 | #000000 | Sales Target | arial,10,bold | solid | left |

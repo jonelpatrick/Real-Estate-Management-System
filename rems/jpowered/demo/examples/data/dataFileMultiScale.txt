@@ -1,0 +1,9 @@
+data1series1:   82000
+data2series1:   60000
+data3series1:   35000
+data4series1:   20000
+
+data1series2:   1200
+data2series2:   2000
+data3series2:   3500
+data4series2:   2400

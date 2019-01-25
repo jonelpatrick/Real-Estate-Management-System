@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Advanced Graphs and Charts for PHP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel=STYLESHEET type="text/css" href="../images/960.css" />
+<link rel=STYLESHEET type="text/css" href="../images/jpprodstyle.css" />
+</head>
+<body>
+
+<!-- Title area -->
+<div class='container_12 header'>
+  <div class='grid_4'>
+    <a href='http://www.jpowered.com'><img style='border-width: 0px;' src='../images/jpowered.gif' width='270' height='60' align='left' alt='JPowered.com' /></a>
+  </div>
+  <div class='grid_8 omega product_title'>
+    <h1>Advanced Graphs and Charts for PHP</h1>
+  </div>
+</div>
+
+<!-- top menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!-- main content -->
+<div class='container_12 main_content'>
+
+<div class='grid_8'>
+
+<div class="pgt"><h1>Custom Data Function</h1></div>
+
+
+<div class="contentp">
+
+
+<p>This feature allows you to create your own custom PHP Data Script function. The function will be included at
+run time and used by the graph to acquire the data.</p>
+<p>This method provides enormous flexibility for the data acquisition process. All PHP Global variables ($_REQUEST, $_GET, $_POST, $_SESSION etc) are available to be used within the data function. </p>
+<p>A custom data script is specified via the parameter &quot;<b>datascript</b>&quot;. For example if your data
+script is in a file datascript.php then your &lt;IMG&gt;
+tag would be:-</p>
+
+<textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/[GRAPH-STYLE]?
+datascript=[path_to_datascript_file]/datascript.php&
+config=[url_to_config]"
+width="500"
+height="400" />
+</textarea>
+<br />The [path_to_datascript_file] should be a filesystem file path to the data function file. If a relative file path then keep in mind that this will be relative to the location of the graph software and NOT the page which contains the IMG tag.
+
+
+<p>The data script must be valid PHP code and should contain at least the following function:-</p>
+<textarea class="jpcodeblock">
+function datascript () {
+
+    return $lines;
+}
+</textarea>
+<p>where $lines is a string array containing the data parameters and values.</p>
+<p>The contents of the string array should be the format:- </p>
+<blockquote>
+<p><b>data<font color="#0000CC">N</font>series<font color="#0000CC">M</font>:<font color="#CC0033"> [value]</font></b></p>
+</blockquote>
+<p>where <b><font color="#0000CC">N</font></b> represents the position of the data item in the series and <font color="#0000CC"><b>M</b></font>
+represents the series number.</p>
+<p>For example, for 3 series of data each containing 6 points the string array should contain:-</p>
+<table width="400" border="0" cellspacing="0" cellpadding="6" bgcolor="#FFFFFF" align="center">
+<tr>
+<td><font color="#006600">data1series1: 30<br />
+data2series1: 20<br />
+data3series1: -10<br />
+data4series1: 40<br />
+data5series1: 50<br />
+data6series1: 60<br />
+<br />
+data4series2: 40<br />
+data5series2: 50<br />
+data6series2: 60<br />
+<br />
+data1series3: 100<br />
+data2series3: 50<br />
+data3series3: -25<br />
+data4series3: 75<br />
+data5series3: 125<br />
+data6series3: 150</font></td>
+</tr>
+</table>
+<p>&nbsp;</p>
+<p><font color="#FF0000">Note: <font color="#000000">The data script should under no circumstances write out any
+information via the <font color="#0000FF">print</font> or <font color="#0000FF">echo</font> functions. This
+would cause the production of the graph image to fail.</font></font></p>
+
+
+<p>The full function would look like this:-</p>
+<textarea class="jpcodeblock" style="height: 400px;">
+function datascript () {
+
+    $lines = array();
+
+    $lines[] = 'data2series1: 20';
+    $lines[] = 'data3series1: -10';
+    $lines[] = 'data4series1: 40';
+    $lines[] = 'data5series1: 50';
+    $lines[] = 'data6series1: 60';
+
+    $lines[] = 'data4series2: 40';
+    $lines[] = 'data5series2: 50';
+    $lines[] = 'data6series2: 60';
+
+    $lines[] = 'data1series3: 100';
+    $lines[] = 'data2series3: 50';
+    $lines[] = 'data3series3: -25';
+    $lines[] = 'data4series3: 75';
+    $lines[] = 'data5series3: 125';
+    $lines[] = 'data6series3: 150';
+
+    return $lines;
+}
+</textarea>
+<p>This is a trivial example but as you can see it is now possible to create a function which
+will construct the data array based upon any parameter held in $_SESSION or other Global. This method
+can also be used to pull data from a database.</p>
+
+
+
+
+<p>Further information and examples can found in the <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/">Online Tutorials here &raquo;</a></p>
+
+
+</div>
+
+
+<p>
+<a href="graphData.htm">&laquo; back to Graph Data</a>
+</p>
+
+<div class="contentp">
+<h3>Also see:-</h3>
+<p><a href="configurationOptions.htm">Configuration Options and Parameters &raquo;</a></p>
+</div>
+
+
+</div>
+
+<div class='grid_1'>&nbsp;</div>
+
+<div class='grid_3'>
+
+
+    <p><a href="../index.htm">Package Index</a></p>
+    <p><a href="../demo/index.htm">Demo Index</a></p>
+    <p><a href="../documentation/index.htm">Documentation</a></p>
+    <p><a href="../documentation/troubleShooting.htm">Troubleshooting Guide</a></p>
+    <p><a href="http://www.jpowered.com/support.htm">Support</a></p>
+
+
+    <h4>Documentation Contents</h4>
+    <p><a href="../documentation/addingGraphsToPages.htm">Adding Graphs to Web Pages</a></p>
+    <p><a href="../documentation/configurationOptions.htm">Configuration Options and Parameters</a></p>
+    <p><a href="../documentation/graphData.htm">Supplying the Graph with Data</a></p>
+    <p><a href="../documentation/sampleImageTags.htm">Sample Image Tags</a></p>
+
+
+    <h4>Database Connections</h4>
+    <p><a href="databaseInformationFile.htm">Database Information method</a></p>
+    <p><a href="customDataFunction.htm">Custom Data Function</a></p>
+
+    <p>&nbsp;</p>
+    <p><a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">more Documentation Online here</a></p>
+
+
+
+
+    <p>&nbsp;</p>
+</div>
+
+
+
+</div>
+
+<div class='footer'>
+
+<!-- bottom menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="../documentation/index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!--  footer -->
+<div class='container_12'>
+  <div class="grid_12 mc">[<a href="http://www.jpowered.com/"> JPowered.com </a>] [<a href="http://www.jpowered.com/products.htm" title="More software components for web applications"> More Products </a>] [<a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">Support </a>]</div>
+  <div class="grid_12 cprt">Copyright &copy; 2011 - 2014 Neutron Solutions Limited - All rights reserved.</div>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Advanced Graphs and Charts for PHP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel=STYLESHEET type="text/css" href="../images/960.css" />
+<link rel=STYLESHEET type="text/css" href="../images/jpprodstyle.css" />
+</head>
+<body>
+
+<!-- Title area -->
+<div class='container_12 header'>
+  <div class='grid_4'>
+    <a href='http://www.jpowered.com'><img style='border-width: 0px;' src='../images/jpowered.gif' width='270' height='60' align='left' alt='JPowered.com' /></a>
+  </div>
+  <div class='grid_8 omega product_title'>
+    <h1>Advanced Graphs and Charts for PHP</h1>
+  </div>
+</div>
+
+<!-- top menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!-- main content -->
+<div class='container_12 main_content'>
+
+<div class='grid_8'>
+
+<h1>Configuration Options</h1>
+
+
+
+<p>The Advanced Graph and Chart Software for PHP allows all aspects of the graph to be set via a range of configuration parameters.</p>
+<p>With the exception of 2 parameters, all of the following are optional and if not supplied the graph will automatically calculate the values.</p>
+<p>The only 2 parameters which must be supplied in all cases are <b>width</b> and <b>height</b>.<br />(<b>Note: </b>the width and height in the configuration should match the width and height values specified in the IMG tag.)</p>
+<p style="margin: 10px 4px 4px 4px;">The configuration options can be supplied:-</p>
+<ul>
+<li>in a static text file</li>
+<li>with the data</li>
+<li>or on the request URL in the image tag</li>
+</ul>
+
+<p>For instance you may find that most of your options (e.g. graph titles and font settings) remain the same and so these would be supplied in a static text file. Other parameters
+(e.g. X-axis labels) may vary depending upon the data being retrieved. As such the values of these would be dynamically calculated and supplied along with the data.</p>
+<p>The following tables list all the possible options and describes the function of each parameter.</p>
+
+<ul>
+<li><a href="#general">General Graph properties</a></li>
+<li><a href="#grid">Grid properties</a></li>
+<li><a href="#scale">Scale properties</a></li>
+<li><a href="#threed">3D properties</a></li>
+<li><a href="#legend">Legend properties</a></li>
+<li><a href="#xlabels">X Axis Labels</a></li>
+<li><a href="#ylabels">Y Axis Labels</a></li>
+<li><a href="#titles">Graph Titles</a></li>
+<li><a href="#series">Series Specifications</a></li>
+<li><a href="#piechart">Pie Chart Properties</a></li>
+<li><a href="#target">Target Lines</a></li>
+<li><a href="#trend">Trend Line</a></li>
+<li><a href="#freetext">Free Form Text</a></li>
+<li><a href="#freeimages">Free Form Images</a></li>
+</ul>
+
+<h3>Also see:-</h3>
+<p><a href="graphData.htm">Graph Data &raquo;</a></p>
+
+<a name="general"></a><p><b>General Graph Properties</b></p>
+<table class="pmtable2" style="margin: 4px;">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+<tr class="pmrow">
+<td><b>width</b></td>
+<td>
+integer value<br />
+Specifies the width of the graph in pixels. This value should match the WIDTH element specified in the IMG tag.
+<br /><b>Note:</b> This parameter is mandatory !
+</td>
+<td>width: 550</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>height</b></td>
+<td>
+integer value<br />
+Specifies the height of the graph in pixels. This value should match the HEIGHT element specified in the IMG tag.
+<br /><b>Note:</b> This parameter is mandatory !
+</td>
+<td>height: 400</td>
+</tr>
+
+
+<tr class="pmrow">
+<td><b>ndecplaces</b></td>
+<td>integer value<br />
+Specifies the number of decimal places to use when displaying values</td>
+<td>ndecplaces: 2</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>thousandseparator</b></td>
+<td>Any character symbol.</td>
+<td>thousandseparator: ,</td>
+</tr>
+
+
+<tr class="pmrow">
+<td><b>backgroundcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+general background color of the graph image</td>
+<td>backgroundcolor: #ffffff</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>transparency</b></td>
+<td>Integer value between 0 and 127.<br />
+This value specifies the transparency of bubbles, bars and areas so that where items overlap the underlying item may still be seen.<br />
+0 represents totally opaque whilst 127 represents totally transparent. A good value for this parameter is 40.</td>
+<td>transparency: 40</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>bgimage</b></td>
+<td>URL to an Image file<br />
+specifies an image to used as the background</td>
+<td>bgimage: graphBackground.jpg</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>maxbubblesize</b></td>
+<td>Applies only to the Bubble Chart<br />
+Specifies the Maximum Bubble size in pixels. The data point with the largest Z value will be drawn at this size. All other data items will be scaled accordingly.</td>
+<td>maxbubblesize: 20</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>quality</b></td>
+<td>For Pie and Cylinder charts this parameter specifies the amount of 'curve smoothing' (anit-aliasing) that will take place. The higher the quality parameter the better the resultant image.<br /><br />
+Valid values are:-
+<ul>
+<li>low</li>
+<li>medium</li>
+<li>high</li>
+<li>very high</li>
+</ul>
+</td>
+<td>quality: high</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>connectinglines</b></td>
+<td>True or False<br />
+determines whether points should be connected or not</td>
+<td>connectinglines: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>outline</b></td>
+<td>True or False<br />
+specifies whether bars should be outlined or not</td>
+<td>outline: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gradientfill</b></td>
+<td>True or False<br />
+for bar and cylinder charts turns the gradient fill effect on or off</td>
+<td>gradientfill: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>barwidth</b></td>
+<td>integer value<br />
+width in pixels of each bar or cylinder</td>
+<td>barwidth: 30</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>barspacing</b></td>
+<td>integer value
+space in pixels between each bar or cylinder</td>
+<td>barspacing: 5</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>displaybarvalues</b></td>
+<td>True or False<br />
+specifies whether actual values should be displayed at the top of each point</td>
+<td>displaybarvalues: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>displayvalues</b></td>
+<td>True or False<br />
+specifies whether actual values should be displayed at the top of each point</td>
+<td>displayvalues: true</td>
+</tr>
+
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="grid"></a><p><b>Grid Properties</b></p>
+<table class="pmtable2">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+<tr class="pmrow">
+<td><b>grid</b></td>
+<td>True or False<br />
+specifies whether to draw grid lines or not</td>
+<td>grid: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>axis</b></td>
+<td>True or False<br />
+specifies whether to draw axis lines or not</td>
+<td>axis: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>nrows</b></td>
+<td>integer value<br />
+number of grid rows</td>
+<td>nrows: 10</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ncols</b></td>
+<td>number of grid columns</td>
+<td>ncols: 5</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>vspace</b></td>
+<td>integer value<br />
+space in pixels of each grid row</td>
+<td>vspace: 30</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>hspace</b></td>
+<td>integer value<br />
+space in pixels of each grid column</td>
+<td>hspace: 40</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gridstyle</b></td>
+<td>valid values are:-
+<ul>
+<li>solid</li>
+<li>dashed</li>
+<li>dotted</li>
+<li>long dashed</li>
+<li>dotted dashed</li>
+</ul>
+specifies the line style of the grid lines</td>
+<td>gridstyle: dotted</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gridcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+Grid line color</td>
+<td>gridcolor: #000000</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>axiscolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+Axis line color</td>
+<td>axiscolor: #0000FF</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>floorcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+If 3D is on then this specifies the color of the x-axis floor</td>
+<td>floorcolor: #555599</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gridbgimage</b></td>
+<td>URL to an Image file<br />
+specified an image to used as the grid background</td>
+<td>gridbgimage: brimage.gif</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gridbgcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+the background color of the grid area</td>
+<td>gridbgcolor: #EEEEEE</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gridposition</b></td>
+<td>an x,y, position pair<br />
+specifies the position of the bottom left of the grid</td>
+<td>gridposition: 30,275</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gridlineh</b></td>
+<td>True or False<br />
+Turns horizontal grid lines on or off</td>
+<td>gridlineh: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gridlinev</b></td>
+<td>True or False<br />
+Turns  vertical grid lines on or off</td>
+<td>gridlinev: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>gridbgcolor2</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+specifies a second background color of the grid area. If this parameter is specified then grid rows are colored alternating between this color and gridbgcolor</td>
+<td>gridbgcolor2: #DDDDDD</td>
+</tr>
+
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="scale"></a><p><b>Scale Properties</b></p>
+<table class="pmtable2">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>Vertical Type Charts</b></td></tr>
+
+<tr class="pmrow">
+<td><b>chartscale</b></td>
+<td>Numeric Value<br />
+specifies the value the each grid row is to represent on the left hand axis</td>
+<td>chartscale: 1000</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>chartstarty</b></td>
+<td>Numeric Value<br />
+specifies the starting value for the left hand axis</td>
+<td>chartstarty: 0</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>chartscale2</b></td>
+<td>Numeric Value<br />
+specifies the value the each grid row is to represent on the right hand axis</td>
+<td>chartscale2: 0.1</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>chartstarty2</b></td>
+<td>Numeric Value<br />
+specifies the starting value for the right hand axis</td>
+<td>chartstarty2: 0.5</td>
+</tr>
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>Horizontal Type Charts</b></td></tr>
+
+<tr class="pmrow">
+<td><b>chartscalex</b></td>
+<td>Numeric Value<br />
+specifies the value the each grid column is to represent on the bottom axis</td>
+<td>chartscalex: 50</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>chartstartx</b></td>
+<td>Numeric Value<br />
+specifies the starting value for the bottom axis</td>
+<td>chartstartx: 200</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>chartscalex2</b></td>
+<td>Numeric Value<br />
+specifies the value the each grid column is to represent on the top axis</td>
+<td>chartscalex2: 0.5</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>chartstartx2</b></td>
+<td>Numeric Value<br />
+specifies the starting value for the top axis</td>
+<td>chartstartx2: 10.0</td>
+</tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="threed"></a><p><b>3D Properties</b></p>
+<table class="pmtable2">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+<tr class="pmrow">
+<td><b>3d</b></td>
+<td>True or False<br />
+determines whether the graph should be 3D or 2D</td>
+<td>3d: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>depth3d</b></td>
+<td>Integer Value<br />
+specifies the depth in pixels of the 3D effect</td>
+<td>depth3d: 20</td>
+</tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="legend"></a><p><b>Legend Properties</b></p>
+<table class="pmtable2">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+<tr class="pmrow">
+<td><b>legend</b></td>
+<td>True or False<br />
+determines whether the graph legend should be drawn or not  </td>
+<td>legend: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendstyle</b></td>
+<td>horizontal or vertical<br />
+specifies whether the legend should be horizontal or vertical</td>
+<td>legendstyle: horizontal</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendbgcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+background color of the legend area</td>
+<td>legendbgcolor: #FFFFFF</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendbordercolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+border color of the legend</td>
+<td>legendbordercolor: #8888FF</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendtextcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+text color of the legend</td>
+<td>legendtextcolor: #000000</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendtitle</b></td>
+<td>Text<br />
+legend title. leave blank if no title required.</td>
+<td>legendtitle: The Legend</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendposition</b></td>
+<td>X,Y position pair<br />
+position of the legend.</td>
+<td>legendposition: 50,50</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendfont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul>
+</td>
+<td>legendfont: arial</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendfontsize</b></td>
+<td>Font Size in pixels</td>
+<td>legendfontsize: 12</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendfontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>legendfontbold: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>legendfontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>legendfontitalic: false</td>
+</tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="xlabels"></a><p><b>X Axis Labels</b></p>
+<table class="pmtable2">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+<tr class="pmrow">
+<td><b>xlabelorientation</b></td>
+<td>can be one of
+<ul>
+<li> - horizontal</li>
+<li> - vertical</li>
+<li> - up angle</li>
+<li> - downangle</li>
+</ul>
+specifies the orientation of the x-axis labels</td>
+<td>xlabelorientation: up angle</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabelypos</b></td>
+<td>Integer value<br />
+specifies the y position of the x-axis labels</td>
+<td>xlabelypos: 250</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabeloffset</b></td>
+<td>Integer Value<br />
+species the pixel y offset of every second label. Useful when a horizontal orientaiton is specified</td>
+<td>xlabeloffset: 15</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabelcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+x-axis label text color</td>
+<td>xlabelcolor: #0000A9</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabels</b></td>
+<td>
+<b>Vertical Type Charts</b><br />
+List of labels seperated by | character.<br /><br />
+<b>Horizontal Type Charts</b><br />
+True or False<br />
+determines whether x-axis labels should be drawn or not
+</td>
+<td>
+<b>Vertical Type Charts</b><br />
+xlabels: Jan|Feb|Mar
+<br /><br /><b>Horizontal Type Charts</b><br />
+xlabels: true
+</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabelfont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul>
+</td>
+<td>xlabelfont: arial</td></tr>
+
+<tr class="pmrow">
+<td><b>xlabelfontsize</b></td>
+<td>Font Size in pixels</td>
+<td>xlabelfontsize: 10</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabelfontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>xlabelfontbold: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabelfontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>xlabelfontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabelpre</b></td>
+<td>For Horizontal charts this is the text to place in front of each number value</td>
+<td>xlabelpre: $</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xlabelpost</b></td>
+<td>For Horizontal charts this is the text to place after each number value</td>
+<td>xlabelpost: kpg</td>
+</tr>
+
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>Horizontal Type Charts with a Second Scale</b></td></tr>
+
+<tr class="pmrow">
+<td><b>x2labelorientation</b></td>
+<td>an be one of
+<ul>
+<li>horizontal</li>
+<li>vertical</li>
+<li>up angle</li>
+<li>downangle</li>
+</ul>
+specifies the orientation of the x-axis labels</td>
+<td>x2labelorientation: down angle</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2labelcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+x-axis label text color</td>
+<td>x2labelcolor: #0000A9</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2labels</b></td>
+<td>True or False<br />
+determines whether x-axis labels should be drawn or not
+</td>
+<td>x2labels: true</td>
+</tr>
+
+
+
+
+<tr class="pmrow">
+<td><b>x2labelfont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul>
+</td>
+<td>x2labelfont: arial</td></tr>
+
+<tr class="pmrow">
+<td><b>x2labelfontsize</b></td>
+<td>Font Size in pixels</td>
+<td>x2labelfontsize: 10</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2labelfontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>x2labelfontbold: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2labelfontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>x2labelfontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2labelpre</b></td>
+<td>For Horizontal charts this is the text to place in front of each number value</td>
+<td>x2labelpre: $</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2labelpost</b></td>
+<td>For Horizontal charts this is the text to place after each number value</td>
+<td>x2labelpost: kpg</td>
+</tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="ylabels"></a><p><b>Y Axis Labels</b></p>
+<table class="pmtable2">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+
+<tr class="pmrow">
+<td><b>ylabels</b></td>
+<td>
+<b>Vertical Type Charts</b><br />
+True or False<br />
+determines whether x-axis labels should be drawn or not<br /><br />
+<b>Horizontal Type Charts</b><br />
+List of labels seperated by | character.<br /><br />
+</td>
+<td>
+<b>Vertical Type Charts</b><br />
+ylabels: true
+<br /><br /><b>Horizontal Type Charts</b><br />
+ylabels: Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sept|Oct|Nov|Dec
+</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ylabelfont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul>
+</td>
+<td>ylabelfont: arial</td></tr>
+
+<tr class="pmrow">
+<td><b>ylabelfontsize</b></td>
+<td>Font Size in pixels</td>
+<td>ylabelfontsize: 10</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ylabelfontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>ylabelfontbold: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ylabelfontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>ylabelfontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ylabelpre</b></td>
+<td>For Vertical charts this is the text to place in front of each number value</td>
+<td>ylabelpre: $</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ylabelpost</b></td>
+<td>For Vertical charts this is the text to place after each number value</td>
+<td>ylabelpost: kpg</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ylabelcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+y-axis label text color</td>
+<td>ylabelcolor: #0000A9</td>
+</tr>
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>Vertical Type Charts with a Second Scale</b></td></tr>
+
+<tr class="pmrow">
+<td><b>y2lables</b></td>
+<td>True or False<br />
+determines whether the second x-axis labels should be drawn or not</td>
+<td>y2lables: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2labelfont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul>
+</td>
+<td>y2labelfont: arial</td></tr>
+
+<tr class="pmrow">
+<td><b>y2labelfontsize</b></td>
+<td>Font Size in pixels</td>
+<td>y2labelfontsize: 10</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2labelfontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>y2labelfontbold: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2labelfontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>y2labelfontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2labelpre</b></td>
+<td>For Vertical charts this is the text to place in front of each number value</td>
+<td>y2labelpre: $</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2labelpost</b></td>
+<td>For Vertical charts this is the text to place after each number value</td>
+<td>y2labelpost: kpg</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2labelcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+right hand y-axis label text color</td>
+<td>y2labelcolor: #0000A9</td>
+</tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="titles"></a><p><b>Graph Titles</b></p>
+<table class="pmtable2">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>Main Graph Title</b></td></tr>
+
+<tr class="pmrow">
+<td><b>titletext</b></td>
+<td>Text<br />
+Main graph title</td>
+<td>titletext: Graph Title</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>titlecolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+text color</td>
+<td>titlecolor: #888888</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>titlefont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul></td>
+<td>titlefont: Times Roman</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>titlefontsize</b></td>
+<td>Font Size in pixels</td>
+<td>titlefontsize: 16</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>titlefontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>titlefontbold: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>titlefontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>titlefontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>titleposition</b></td>
+<td>X,Y Position<br />
+position of the title</td>
+<td>titleposition: 100,20</td>
+</tr>
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>X Axis Title</b></td></tr>
+
+<tr class="pmrow">
+<td><b>xtitletext</b></td>
+<td>Text<br />
+x-axis title</td>
+<td>xtitletext: X Title</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xtitlecolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+text color</td>
+<td>xtitlecolor: #000000</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xtitlefont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul></td>
+<td>xtitlefont: Times Roman</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xtitlefontsize</b></td>
+<td>Font Size in pixels</td>
+<td>xtitlefontsize: 16</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xtitlefontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>xtitlefontbold: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xtitlefontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>xtitlefontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>xtitleposition</b></td>
+<td>X,Y Position<br />
+position of the X title</td>
+<td>xtitleposition: 100,20</td>
+</tr>
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>2nd X-Axis Title for charts using a second x-axis scale</b></td></tr>
+
+<tr class="pmrow">
+<td><b>x2titletext</b></td>
+<td>Text<br />
+second x-axis title</td>
+<td>x2titletext: X Title</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2titlecolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+text color</td>
+<td>x2titlecolor: #000000</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2titlefont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul></td>
+<td>x2titlefont: Times Roman</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2titlefontsize</b></td>
+<td>Font Size in pixels</td>
+<td>x2titlefontsize: 16</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2titlefontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>x2titlefontbold: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2titlefontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>x2titlefontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>x2titleposition</b></td>
+<td>X,Y Position<br />
+position of the second X title</td>
+<td>x2titleposition: 100,20</td>
+</tr>
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>Y Axis Title</b></td></tr>
+
+<tr class="pmrow">
+<td><b>ytitletext</b></td>
+<td>Text<br />
+y-axis title</td>
+<td>ytitletext: Y Title</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ytitlecolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+text color</td>
+<td>ytitlecolor: #000000</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ytitlefont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul></td>
+<td>ytitlefont: Times Roman</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ytitlefontsize</b></td>
+<td>Font Size in pixels</td>
+<td>ytitlefontsize: 16</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ytitlefontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>ytitlefontbold: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ytitlefontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>ytitlefontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>ytitleposition</b></td>
+<td>X,Y Position<br />
+position of the Y title</td>
+<td>ytitleposition: 100,20</td>
+</tr>
+
+
+<tr class="pmrow"><td colspan="3" style="text-align: center;"><b>Second Y Axis Title for charts using a second y-axis scale</b></td></tr>
+
+<tr class="pmrow">
+<td><b>y2titletext</b></td>
+<td>Text<br />
+second y-axis title</td>
+<td>y2titletext: Y Title</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2titlecolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)<br />
+text color</td>
+<td>y2titlecolor: #000000</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2titlefont</b></td>
+<td>Font Face<br />
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul></td>
+<td>y2titlefont: Times Roman</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2titlefontsize</b></td>
+<td>Font Size in pixels</td>
+<td>y2titlefontsize: 16</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2titlefontbold</b></td>
+<td>True or False<br />Sets Bold on the font</td>
+<td>y2titlefontbold: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2titlefontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>y2titlefontitalic: false</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>y2titleposition</b></td>
+<td>X,Y Position<br />
+position of the second Y title</td>
+<td>y2titleposition: 100,20</td>
+</tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="series"></a><p><b>Series Specifications</b></p>
+<p>The series specications are slightly different for each chart style. Below are the formats for each chart style.</p>
+<table class="pmtable2">
+
+<tr class="pmheading"><td colspan="3"><b>Line Graph</b></td></tr>
+<tr class="pmrow"><td>
+<p>The format of the series parameter is:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">seriesN: line color | legend text | scale | point size | point style | fill | line style</p>
+<p>where N represents the series number</p>
+<p style="background-color: #eee; padding: 4px;"><b>Point Style</b> - valid values are one of :-<br />
+point , circle , cross , pluscross , xcross , box , triangle , diamond , hexagon
+</p>
+<p style="background-color: #eee; padding: 4px;">
+<b>Line Style</b> - valid values are one of :-<br />
+solid , dashed , dotted , long dashed , dotted dashed
+</p>
+<p>For example if there are 2 series of data with the first using the left hand scale and the second using the right hand scale, the series parameter would be:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">
+series1: #ff0000|Series One|left|6|triangle|true|solid|<br />
+series2: #0000ff|Series Two|right|4|circle|true|dashed|
+</p>
+</td></tr>
+
+
+<tr class="pmheading"><td colspan="3"><b>Area Graph</b></td></tr>
+<tr class="pmrow"><td>
+<p>The format of the series parameter is:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">seriesN: area color | legend text | point size | point style | fill | line style</p>
+<p>where N represents the series number</p>
+<p style="background-color: #eee; padding: 4px;"><b>Point Style</b> - valid values are one of :-<br />
+point , circle , cross , pluscross , xcross , box , triangle , diamond , hexagon
+</p>
+<p style="background-color: #eee; padding: 4px;">
+<b>Line Style</b> - valid values are one of :-<br />
+solid , dashed , dotted , long dashed , dotted dashed
+</p>
+<p>For example if there are 2 series of data with the first using the left hand scale and the second using the right hand scale, the series parameter would be:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">
+series1: #ff0000|Series One|6|triangle|true|solid|<br />
+series2: #0000ff|Series Two|4|circle|true|dashed|
+</p>
+</td></tr>
+
+<tr class="pmheading"><td colspan="3"><b>Horizontal Bar Graph<br />Horizontal Cylinder Graph</b></td></tr>
+<tr class="pmrow"><td>
+<p>The format of the series parameter is:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">seriesN: bar color | legend text | scale</p>
+<p>where N represents the series number</p>
+<p>For example if there are 2 series of data with the first using the bottom X-axis scale and the second using the top X-axis scale, the series parameter would be:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">
+series1: #ff0000|Series One|bottom<br />
+series2: #0000ff|Series Two|top
+</p>
+</td></tr>
+
+<tr class="pmheading"><td colspan="3"><b>Vertical Bar Graph<br />Vertical Cylinder Graph</b></td></tr>
+<tr class="pmrow"><td>
+<p>The format of the series parameter is:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">seriesN: bar color | legend text | scale</p>
+<p>where N represents the series number</p>
+<p>For example if there are 2 series of data with the first using the left Y-axis scale and the second using the right Y-axis scale, the series parameter would be:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">
+series1: #ff0000|Series One|left<br />
+series2: #0000ff|Series Two|right
+</p>
+</td></tr>
+
+<tr class="pmheading"><td colspan="3"><b>Stacked Horizontal Bar Graph<br />Stacked Vertical Bar Graph<br />Stacked Horizontal Cylinder Graph<br />Stacked Vertical Cylinder Graph</b></td></tr>
+<tr class="pmrow"><td>
+<p>The format of the series parameter is:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">seriesN: bar color | legend text</p>
+<p>where N represents the series number</p>
+<p>For example if there are 2 series of data the series parameters would be:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">
+series1: #ff0000|Series One<br />
+series2: #0000ff|Series Two
+</p>
+</td></tr>
+
+
+<tr class="pmheading"><td colspan="3"><b>Bubble Chart, X-Y Scatter Graph</b></td></tr>
+<tr class="pmrow"><td>
+<p>The format of the series parameter is:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">seriesN: color | legend text | scale | point size | point style | fill </p>
+<p>where N represents the series number</p>
+<p style="background-color: #eee; padding: 4px;"><b>Point Style</b> - valid values are one of :-<br />
+point , circle , cross , pluscross , xcross , box , triangle , diamond , hexagon
+</p>
+<p style="background-color: #eee; padding: 4px;">
+<b>Line Style</b> - valid values are one of :-<br />
+solid , dashed , dotted , long dashed , dotted dashed
+</p>
+<p>For example if there are 2 series of data with the first using the left hand scale and the second using the right hand scale, the series parameter would be:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">
+series1: #ff0000|Series One|left|6|triangle|true<br />
+series2: #0000ff|Series Two|right|4|circle|true
+</p>
+</td></tr>
+
+
+
+<tr class="pmheading"><td colspan="3"><b>Combination Area and Vertical Bar Graph<br />Combination Area and Stacked Vertical Bar Graph<br />Combination Line and Vertical Bar Graph<br />Combination Line and Stacked Vertical Bar Graph</b></td></tr>
+<tr class="pmrow"><td>
+<p>The format of the series parameter is:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">
+For bar type series<br />
+seriesN: bar| bar color  | legend text |
+For Area or Line type series<br />
+seriesN: area OR line| color | legend text | point size | point style | fill | line style
+</p>
+<p>where N represents the series number</p>
+<p style="background-color: #eee; padding: 4px;"><b>Point Style</b> - valid values are one of :-<br />
+point , circle , cross , pluscross , xcross , box , triangle , diamond , hexagon
+</p>
+<p style="background-color: #eee; padding: 4px;">
+<b>Line Style</b> - valid values are one of :-<br />
+solid , dashed , dotted , long dashed , dotted dashed
+</p>
+<p>For example if there are 2 series of data with the first a bar and the second and area:-</p>
+<p style="font-family: courier; background-color: #fff; padding: 4px;">
+series1: bar|#ff0000|Series One|<br />
+series2: area|#00ff00|Series Two|4|circle|true|dashed|
+<br /><br />
+or for a combination line and bar:-<br />
+series1: bar|#ff0000|Series One|<br />
+series2: line|#00ff00|Series Two|4|circle|true|dashed|
+</p>
+</td></tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="piechart"></a><p><b>Pie Chart Properties</b></p>
+<table class="pmtable2">
+<tr class="pmheading"><td>Name</td><td>Description</td><td>Example</td></tr>
+
+<tr class="pmrow">
+<td><b>3dangle</b></td>
+<td>Integer value between 0 and 90<br />
+Specifies the angle (in degrees) in the z-plane of the 3d effect. A value of 40 generally produces good results.</td>
+<td>3dangle: 40</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>pecentndecplaces</b></td>
+<td>Integer<br />
+Number of decimal places to display when showing percentage figures.</td>
+<td>pecentndecplaces: 0</td>
+</tr>
+
+
+<tr class="pmrow">
+<td><b>segmentlabels</b></td>
+<td>True or False<br />
+specifies whether to segment labels or not</td>
+<td>segmentlabels: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>segmentlabelfont</b></td>
+<td>Font Face
+<ul><li>Arial</li><li>Times Roman</li><li>Courier</li></ul></td>
+<td>segmentlabelfont: arial</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>segmentlabelcolor</b></td>
+<td>Color definition (<a href="colors.htm">see Colors &raquo;</a>)</td>
+<td>segmentlabelcolor: #000000</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>segmentlabelfontsize</b></td>
+<td>Font Size in pixels</td>
+<td>segmentlabelfontsize: 11</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>segmentlabelfontbold</b></td>
+<td>True or False<br />Sets Bold on the fon</td>
+<td>segmentlabelfontbold: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>segmentlabelfontitalic</b></td>
+<td>True or False<br />Sets italic on the font</td>
+<td>segmentlabelfontitalic: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>displaypercentages</b></td>
+<td>True or False<br />
+specifies whether to add percentage figures to the segment labels or not</td>
+<td>displaypercentages: true</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>labellines</b></td>
+<td>True or False<br />
+specifies whether to draw a line from the segment to the label or not</td>
+<td>labellines: true</td>
+</tr>
+
+
+<tr class="pmrow">
+<td><b>valuepresym</b></td>
+<td>Character or Text<br />
+leading character or text for each segment label</td>
+<td>valuepresym: $</td>
+</tr>
+
+<tr class="pmrow">
+<td><b>valuepostsym</b></td>
+<td>Character or Text<br />
+trailing character or text for each segment label</td>
+<td>valuepostsym: mpg</td>
+</tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<p><b>Pie Data</b></p>
+<table class="pmtable2">
+
+<tr class="pmrow">
+<td>
+
+<p>Three parameters may be supplied for each pie on the chart. These are: </p>
+<ul>
+<li><b>Center Position</b> - x,y pixel co-ordinate of the pie center</li>
+<li><b>Pie Size </b>-diameter in pixels of the pie</li>
+<li><b>Segment Seperation</b> - if an exploded pie is required then this value represents the seperation in pixels of the segments.</li>
+</ul>
+
+
+<p>The format of the pie parameter is:-</p>
+<p style="font-family: courier">pieN: position | size | seperation |</p>
+
+<p>where <b>N</b> represents the pie / series number</p>
+<p>For example if there are 2 series of data (ie 2 pies) the pie parameters would be:-</p>
+<p style="font-family: courier">
+pie1: 100,100|100|0|<br />
+pie2: 300,100|75|20|
+</p>
+</td></tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<p><b>Pie Segments</b></p>
+<table class="pmtable2">
+
+<tr class="pmrow">
+<td>
+
+<p>Two parameters may be supplied for each pie segment. These are: </p>
+<ul>
+<li><b>Segment Color</b> - x,y pixel co-ordinate of the pie center</li>
+<li><b>Legend Label</b> -diameter in pixels of the pie</li>
+</ul>
+
+<p>Segment definitions are common to all pies on the chart.</p>
+<p>The format of the segment parameter is:-</p>
+
+<p style="font-family: courier">segmentM: color | legend label |</p>
+
+<p>where <b>M</b> represents the segment number</p>
+
+<p>For example if there are 5 segements on each pie (ie 5 data values in each series) the segment parameters would
+be:-</p>
+<p style="font-family: courier">
+segment1: red|label 1|<br />
+segment2: red|label 2|<br />
+segment3: red|label 3|<br />
+segment4: red|label 4|<br />
+segment5: red|label 5|
+</p>
+</td></tr>
+
+</table>
+<!-- END PROP TABLE -->
+
+<a name="target"></a><p><b>Target Lines</b></p>
+<table class="pmtable2"><tr><td>
+
+<p>Any number of horizontal target line
+may be added to the chart with the
+parameter &quot;target&quot;.</p>
+
+<p>The target parameter is made up of
+6 elements:-</p>
+<blockquote>
+<p><font color="#000099">value<br />
+  color<br />
+  text<br />
+  font<br />
+  line style<br />
+
+  y-axis scale (left or right)</font></p>
+</blockquote>
+<p>The format of the target line parameter
+is:-</p>
+<table width="450" border="0" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">
+<tr>
+  <td><font face="Courier New, Courier, mono" color="#005500">target:
+    value | color | text | font |
+    line Style | scale|</font></td>
+</tr>
+</table>
+<p>For more on color defintions see <a href="colors.htm">see Colors &raquo;</a></p>
+<p>The font defintion can be one of:-
+
+</p>
+<blockquote>
+<p><font color="#000099">small<br />
+  medium<br />
+  medium bold<br />
+  large<br />
+  large bold</font></p>
+</blockquote>
+
+<p>The line style can be one of:-</p>
+<blockquote>
+<p><font color="#000099">solid<br />
+  dashed<br />
+  dotted<br />
+  long dashed<br />
+  dotted dashed</font></p>
+
+</blockquote>
+<p>For example to set a target line
+at a value of 1000 on the chart,</p>
+<table width="450" border="0" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">
+<tr>
+  <td><font face="Courier New, Courier, mono" color="#005500">target:
+    1000|green|Break Even|medium|dashed|left|</font></td>
+</tr>
+</table>
+
+</td></tr></table>
+<!-- END PROP TABLE -->
+
+<a name="trend"></a><p><b>Trend Line</b></p>
+<table class="pmtable2"><tr><td>
+<p>Any number of trend lines may be
+added to the chart with the parameter
+&quot;trend&quot;.</p>
+
+<p>The trend parameter is made up of
+9 elements:-</p>
+<blockquote>
+<p><font color="#000099">start value<br />
+  start column<br />
+  end value<br />
+  end column</font><font color="#000099"><br />
+  color<br />
+
+  text<br />
+  font<br />
+  line style<br />
+  y-axis scale (left or right)</font></p>
+</blockquote>
+<p>The format of the target line parameter
+is:-</p>
+<table width="450" border="0" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">
+<tr>
+
+  <td><font face="Courier New, Courier, mono" color="#005500">trend:
+    start value|start column|end value|end
+    column|color|text|font|line Style|scale|</font></td>
+</tr>
+</table>
+<p>For more on color defintions <a href="colors.htm">see Colors &raquo;</a></p>
+<p>The font defintion can be one of:-
+</p>
+<blockquote>
+<p><font color="#000099">small<br />
+  medium<br />
+  medium bold<br />
+
+  large<br />
+  large bold</font></p>
+</blockquote>
+<p>The line style can be one of:-</p>
+<blockquote>
+<p><font color="#000099">solid<br />
+  dashed<br />
+  dotted<br />
+
+  long dashed<br />
+  dotted dashed</font></p>
+</blockquote>
+<p>For example to set a trend line starting
+at a value of 1000 in column 2 and
+ending at a value of 1550 in column
+6,</p>
+<table width="450" border="0" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">
+<tr>
+  <td><font face="Courier New, Courier, mono" color="#005500">trend:
+    1000|2|1550|6|green|Up Trend|medium|dashed|left</font>
+
+</td></tr></table>
+</td></tr></table>
+<!-- END PROP TABLE -->
+
+
+<a name="freetext"></a><p><b>Free Form Text</b></p>
+
+<table class="pmtable2"><tr><td>
+
+<p>In addition to the standard titles,
+any number of lines of text may be
+added to the graph using the &quot;text&quot;
+parameter.</p>
+<p>The text parameter is consists of
+8 elements:-</p>
+<ul>
+<li>Text</li>
+<li>Color</li>
+<li>Position</li>
+<li>Font Family</li>
+<li>Font Size</li>
+<li>Bold</li>
+<li>Italic</li>
+<li>Angle</li>
+</ul>
+
+
+<p>The format of the text parameter
+is:-
+</p>
+
+<div style="background-color: #fff; color: #050; width: 600px; font-family: Courier New, Courier, mono; padding: 4px;">text:    string | color | position | font family | font size | bold | italic | angle</div>
+
+<p>
+<b>Color</b> is the text color, For more on color defintions <a href="colors.htm">see Colors &raquo;</a><br />
+<b>position</b> is the X,Y position of the text on the graph canvas.<br />
+<b>font family</b> can be one of,    Arial, Times Roman or Courier <br />
+<b>font size</b> size in pixels of the font<br />
+<b>bold</b> can be true or false to specify whether to use bold font<br />
+<b>italic</b> can be true or false to specify whether to use italic font<br />
+<b>angle</b> Text can be drawn at an angle (a value between 0 and 90). 0 represents horizontal, 90 is vertical. <br />
+</p>
+
+<p>For example if 3 lines of text were to be added the following parameters would be included in the configuration:-</p>
+
+<div style="background-color: #fff; color: #050; width: 600px; font-family: Courier New, Courier, mono; padding: 4px;">
+text:  line one of text|#000000|50,50|arial|12|true|false|0<br />
+text:  line two of text|#000000|50,65|arial|12|true|false|0<br />
+text:  line three of text|#000000|50,80|arial|12|true|false|0
+</div>
+
+</td></tr></table>
+
+<a name="freeimages"></a><p><b>Free Form Images</b></p>
+<table class="pmtable2"><tr><td>
+<p>Any number of images may be added
+to the graph using the &quot;image&quot;
+parameter.</p>
+<p>The image parameter is consists of
+2 elements:-</p>
+<blockquote>
+<p><font color="#000099">URL or Filename
+  of an image file <br />
+  position</font></p>
+</blockquote>
+<p>The format of the image parameter
+is:-</p>
+
+<table width="450" border="0" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">
+<tr>
+  <td><font face="Courier New, Courier, mono" color="#005500">image:
+    URL or filename | position |</font></td>
+</tr>
+</table>
+<p>For example if an image &quot;logo.png&quot;
+was to be drawn on the graph image
+then the following parameter would
+be included in the configuration:-</p>
+<table width="450" border="0" cellspacing="0" cellpadding="5" bgcolor="#FFFFFF">
+<tr>
+  <td><font face="Courier New, Courier, mono" color="#005500">image:
+    logo.png|5,5| </font></td>
+
+</tr>
+</table>
+</td></tr></table>
+<p>&nbsp;</p>
+</div>
+
+<div class='grid_1'>&nbsp;</div>
+
+<div class='grid_3'>
+
+
+    <p><a href="../index.htm">Package Index</a></p>
+    <p><a href="../demo/index.htm">Demo Index</a></p>
+    <p><a href="../documentation/index.htm">Documentation</a></p>
+    <p><a href="../documentation/troubleShooting.htm">Troubleshooting Guide</a></p>
+    <p><a href="http://www.jpowered.com/support.htm">Support</a></p>
+
+
+    <h4>Documentation Contents</h4>
+    <p><a href="../documentation/addingGraphsToPages.htm">Adding Graphs to Web Pages</a></p>
+    <p><a href="../documentation/configurationOptions.htm">Configuration Options and Parameters</a></p>
+    <p><a href="../documentation/graphData.htm">Supplying the Graph with Data</a></p>
+    <p><a href="../documentation/sampleImageTags.htm">Sample Image Tags</a></p>
+
+
+    <h4>Database Connections</h4>
+    <p><a href="databaseInformationFile.htm">Database Information method</a></p>
+    <p><a href="customDataFunction.htm">Custom Data Function</a></p>
+
+    <p>&nbsp;</p>
+    <p><a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">more Documentation Online here</a></p>
+
+
+
+
+    <p>&nbsp;</p>
+</div>
+
+
+
+</div>
+
+<div class='footer'>
+
+<!-- bottom menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="../documentation/index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!--  footer -->
+<div class='container_12'>
+  <div class="grid_12 mc">[<a href="http://www.jpowered.com/"> JPowered.com </a>] [<a href="http://www.jpowered.com/products.htm" title="More software components for web applications"> More Products </a>] [<a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">Support </a>]</div>
+  <div class="grid_12 cprt">Copyright &copy; 2011 - 2014 Neutron Solutions Limited - All rights reserved.</div>
+</div>
+
+</div>
+
+</body>
+</html>

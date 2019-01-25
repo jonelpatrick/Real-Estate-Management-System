@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Advanced Graphs and Charts for PHP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel=STYLESHEET type="text/css" href="../images/960.css" />
+<link rel=STYLESHEET type="text/css" href="../images/jpprodstyle.css" />
+</head>
+<body>
+
+<!-- Title area -->
+<div class='container_12 header'>
+  <div class='grid_4'>
+    <a href='http://www.jpowered.com'><img style='border-width: 0px;' src='../images/jpowered.gif' width='270' height='60' align='left' alt='JPowered.com' /></a>
+  </div>
+  <div class='grid_8 omega product_title'>
+    <h1>Advanced Graphs and Charts for PHP</h1>
+  </div>
+</div>
+
+<!-- top menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!-- main content -->
+<div class='container_12 main_content'>
+
+<div class='grid_8'>
+
+<h1>Adding a Graph to a Web Page</h1>
+
+
+<p>Dynamic Graphs are added to a page with the standard HTML IMG tag. However the 'src' element,
+instead of being set to reference an actual image file, is set to reference the graphing software.
+The img tag is of the following format for all chart styles:-</p>
+
+<p><strong>Also see</strong> - <a href="sampleImageTags.htm">Sample IMG tags for each Graph type</a></p>
+
+
+<h4>Graph Image Tag Format</h4>
+<textarea class="jpcodeblock" style="width: 600px;">
+<img src="http://www.yourdomain.com/jpowered/graph/[GRAPH-STYLE]?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width=""
+height="" />
+</textarea>
+<p>&nbsp;</p>
+<ul>
+<li>[GRAPH-STYLE] - replace with the chart style (e.g. line-graph.php)</li>
+<li>[URLtoDATASOURCE] - the URL link of the data source, a file, a script or database.</li>
+<li>[URLtoCONFIG] - URL link to the configuration settings file.</li>
+</ul>
+<p>The width and height settings operate as normal and tell the browser what size the graph will be.</p>
+
+<p>For example if we require a Vertical Bar Graph in a page where the data is supplied by a script ./data/vbardata.php and the
+config settings are in a file called vbarconfig.txt then the following img tag would be added to the page:-</p>
+<h4>Vertical Bar Graph Example Image Tag</h4>
+<textarea class="jpcodeblock" style="width: 600px;">
+<img src="http://www.yourdomain.com/jpowered/graph/vertical-bar-graph.php?
+data=http://www.yourdomain.com/data/vbardata.php&
+config=http://www.yourdomain.com/vbarconfig.txt"
+width="500"
+height="400" />
+</textarea>
+
+
+<p>Notice that here that full URL paths have been supplied for all files. Relative URLs can be also be used, however
+the paths will be relative to the ./jpowered/graph/ directory and not the dir of the page. With relative URLs the above
+img tag would become:-</p>
+<h4>Relative URL Example Image Tag</h4>
+<textarea class="jpcodeblock" style="width: 600px;">
+<img src="http://www.yourdomain.com/jpowered/graph/vertical-bar-graph.php?
+data=../../data/vbardata.php&
+config=../../vbarconfig.txt"
+width="500"
+height="400" />
+</textarea>
+
+<h4>How the Graph is Produced - The Process</h4>
+<p>When a page containing a graphing img is loaded the following will occur:-</p>
+
+<ul>
+<li> - browser issues a request to the graphing software for the graph image</li>
+<li> - the graphing software will load data and configuration information</li>
+<li> - if a database call has been requested then the queries will be issued for the data</li>
+<li> - the graphing software will dynamically construct the image in memory</li>
+<li> - the graphing software will send the graph image to the browser for display</li>
+</ul>
+
+<p>Although the above process may seem complex, the processing time is very short and it
+is 100% cross browser compliant. Typically the time it takes to generate and display
+the graph is about the same as displaying a static image of equal size.
+</p>
+
+<p><a href="sampleImageTags.htm">Sample IMG tags for each Graph type &raquo;</a></p>
+
+</div>
+
+<div class='grid_1'>&nbsp;</div>
+
+<div class='grid_3'>
+
+
+    <p><a href="../index.htm">Package Index</a></p>
+    <p><a href="../demo/index.htm">Demo Index</a></p>
+    <p><a href="../documentation/index.htm">Documentation</a></p>
+    <p><a href="../documentation/troubleShooting.htm">Troubleshooting Guide</a></p>
+    <p><a href="http://www.jpowered.com/support.htm">Support</a></p>
+
+
+    <h4>Documentation Contents</h4>
+    <p><a href="../documentation/addingGraphsToPages.htm">Adding Graphs to Web Pages</a></p>
+    <p><a href="../documentation/configurationOptions.htm">Configuration Options and Parameters</a></p>
+    <p><a href="../documentation/graphData.htm">Supplying the Graph with Data</a></p>
+    <p><a href="../documentation/sampleImageTags.htm">Sample Image Tags</a></p>
+
+
+    <h4>Database Connections</h4>
+    <p><a href="databaseInformationFile.htm">Database Information method</a></p>
+    <p><a href="customDataFunction.htm">Custom Data Function</a></p>
+
+    <p>&nbsp;</p>
+    <p><a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">more Documentation Online here</a></p>
+
+    <p>&nbsp;</p>
+</div>
+
+
+
+</div>
+
+<div class='footer'>
+
+<!-- bottom menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="../documentation/index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!--  footer -->
+<div class='container_12'>
+  <div class="grid_12 mc">[<a href="http://www.jpowered.com/"> JPowered.com </a>] [<a href="http://www.jpowered.com/products.htm" title="More software components for web applications"> More Products </a>] [<a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">Support </a>]</div>
+  <div class="grid_12 cprt">Copyright &copy; 2011 - 2014 Neutron Solutions Limited - All rights reserved.</div>
+</div>
+
+</div>
+
+</body>
+</html>

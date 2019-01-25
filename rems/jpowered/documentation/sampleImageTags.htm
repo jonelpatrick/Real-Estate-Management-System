@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Advanced Graphs and Charts for PHP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel=STYLESHEET type="text/css" href="../images/960.css" />
+<link rel=STYLESHEET type="text/css" href="../images/jpprodstyle.css" />
+</head>
+<body>
+
+<!-- Title area -->
+<div class='container_12 header'>
+  <div class='grid_4'>
+    <a href='http://www.jpowered.com'><img style='border-width: 0px;' src='../images/jpowered.gif' width='270' height='60' align='left' alt='JPowered.com' /></a>
+  </div>
+  <div class='grid_8 omega product_title'>
+    <h1>Advanced Graphs and Charts for PHP</h1>
+  </div>
+</div>
+
+<!-- top menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!-- main content -->
+<div class='container_12 main_content'>
+
+<div class='grid_8'>
+
+<div class="pgt"><h1>Sample Image Tags for Different Graph Styles</h1></div>
+
+
+<div class="contentp" style="margin: 4px 0px 4px 0px; padding: 4px 0px 4px 0px;">
+
+<p>Dynamic Graphs are added to a page with the standard HTML IMG tag. The 'src' element is set to
+reference the graphing software. The following show the format of the IMG tag for each chart style.</p>
+
+<ul>
+<li>[URLtoDATASOURCE] - should be the URL link to the data source. The datasource can a file, a script or a database.</li>
+<li>[URLtoCONFIG] - this is the URL link to the configuration settings file.</li>
+</ul>
+<p>The width and height settings operate as normal and tell the browser what size the graph will be.</p>
+
+<p>The table below show the format of the IMG tag for each chart style.</p>
+
+<p><a href="addingGraphsToPages.htm">&laquo; back to Adding Graphs to Web Pages</a></p>
+
+
+<table class="jptable" style="margin: 4px 0px 4px 0px; padding: 0px;">
+<thead>
+<tr>
+    <td style="width: 120px;">Chart Style</td>
+    <td style="width: 100px;">Script</td>
+    <td style="width: 580px;">Sample IMG Tag</td>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+    <td>Area Graph</td>
+    <td>area-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/area-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Bubble Chart</td>
+    <td>bubble-chart.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/bubble-chart.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Combination Area and Stacked Vertical Bar Graph</td>
+    <td>area-stacked-vertical-bar-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/area-stacked-vertical-bar-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Combination Area and Vertical Bar Graph</td>
+    <td>area-vertical-bar-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/area-vertical-bar-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Horizontal Bar Graph</td>
+    <td>horizontal-bar-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/horizontal-bar-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Horizontal Cylinder Graph</td>
+    <td>horizontal-cylinder-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/horizontal-cylinder-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Line Graph</td>
+    <td>line-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/line-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Line and Stacked Vertical Bar Graph</td>
+    <td>line-stacked-vertical-bar-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/line-stacked-vertical-bar-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Line and Vertical Bar Graph</td>
+    <td>line-vertical-bar-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/line-vertical-bar-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Pie Chart</td>
+    <td>pie-chart.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/pie-chart.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Stacked Horizontal Bar Graph</td>
+    <td>stacked-horizontal-bar-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/stacked-horizontal-bar-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Stacked Horizontal Cylinder Graph</td>
+    <td>stacked-horizontal-cylinder-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/stacked-horizontal-cylinder-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Stacked Vertical Bar Graph</td>
+    <td>stacked-vertical-bar-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/stacked-vertical-bar-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Stacked Vertical Cylinder Graph</td>
+    <td>stacked-vertical-cylinder-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/stacked-vertical-cylinder-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Vertical Bar Graph</td>
+    <td>vertical-bar-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img src="http://www.yourdomain.com/jpowered/graph/vertical-bar-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>Vertical Cylinder Graph</td>
+    <td>vertical-cylinder-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/vertical-cylinder-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+
+<tr>
+    <td>X-Y Scatter Graph</td>
+    <td>xy-scatter-graph.php</td>
+    <td>
+    <textarea class="jpcodeblock">
+<img
+src="http://www.domain.com/jpowered/graph/xy-scatter-graph.php?
+data=[URLtoDATASOURCE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+    </textarea>
+    </td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+</div>
+
+</div>
+
+<div class='grid_1'>&nbsp;</div>
+
+<div class='grid_3'>
+
+
+    <p><a href="../index.htm">Package Index</a></p>
+    <p><a href="../demo/index.htm">Demo Index</a></p>
+    <p><a href="../documentation/index.htm">Documentation</a></p>
+    <p><a href="../documentation/troubleShooting.htm">Troubleshooting Guide</a></p>
+    <p><a href="http://www.jpowered.com/support.htm">Support</a></p>
+
+
+    <h4>Documentation Contents</h4>
+    <p><a href="../documentation/addingGraphsToPages.htm">Adding Graphs to Web Pages</a></p>
+    <p><a href="../documentation/configurationOptions.htm">Configuration Options and Parameters</a></p>
+    <p><a href="../documentation/graphData.htm">Supplying the Graph with Data</a></p>
+    <p><a href="../documentation/sampleImageTags.htm">Sample Image Tags</a></p>
+
+
+    <h4>Database Connections</h4>
+    <p><a href="databaseInformationFile.htm">Database Information method</a></p>
+    <p><a href="customDataFunction.htm">Custom Data Function</a></p>
+
+    <p>&nbsp;</p>
+    <p><a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">more Documentation Online here</a></p>
+
+
+
+
+    <p>&nbsp;</p>
+</div>
+
+
+
+</div>
+
+<div class='footer'>
+
+<!-- bottom menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="../documentation/index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!--  footer -->
+<div class='container_12'>
+  <div class="grid_12 mc">[<a href="http://www.jpowered.com/"> JPowered.com </a>] [<a href="http://www.jpowered.com/products.htm" title="More software components for web applications"> More Products </a>] [<a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">Support </a>]</div>
+  <div class="grid_12 cprt">Copyright &copy; 2011 - 2014 Neutron Solutions Limited - All rights reserved.</div>
+</div>
+
+</div>
+
+</body>
+</html>

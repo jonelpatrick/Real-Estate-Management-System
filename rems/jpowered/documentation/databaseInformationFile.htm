@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Advanced Graphs and Charts for PHP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel=STYLESHEET type="text/css" href="../images/960.css" />
+<link rel=STYLESHEET type="text/css" href="../images/jpprodstyle.css" />
+</head>
+<body>
+
+<!-- Title area -->
+<div class='container_12 header'>
+  <div class='grid_4'>
+    <a href='http://www.jpowered.com'><img style='border-width: 0px;' src='../images/jpowered.gif' width='270' height='60' align='left' alt='JPowered.com' /></a>
+  </div>
+  <div class='grid_8 omega product_title'>
+    <h1>Advanced Graphs and Charts for PHP</h1>
+  </div>
+</div>
+
+<!-- top menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!-- main content -->
+<div class='container_12 main_content'>
+
+<div class='grid_8'>
+
+<div class="pgt"><h1>Database Information File</h1></div>
+
+
+<div class="contentp">
+    <p>
+    With this method the database information file will contain the necessary information for the graphng software to connect to your database and the queries to run for each data series.
+    At runtime the graphing software will read this file, connect to the database and execute each of the queries. It will then automatically extract the data from the result set(s) for plotting on the graph.
+    </p>
+
+    <p>The database information file is a PHP script which assigns various options to a PHP array '$jpDatabase'. This file is used by the graphing software to connect to the database and execute the queries.</p>
+
+    <p>The array contains three sections of information:-</p>
+    <ul>
+    <li>Database Connection Information</li>
+    <li>Data Queries</li>
+    <li>Database Abstraction Code</li>
+    </ul>
+    <p>An example file can be found in the Sample Application directory ./jpowered/sampleApplication/dataQueries/dbConfig.php</p>
+
+    <p>
+    To tell the graph to use a database information file the 'data' parameter of the IMG tag should be replaced with 'dbinfo' parameter, like this:-<br />
+<textarea class="jpcodeblock" style="height: 110px;">
+<img
+src="http://www.domain.com/jpowered/graph/[GRAPH-STYLE]?
+dbinfo=[RELATIVEpathTOdbinfoFILE]&
+config=[URLtoCONFIG]"
+width="500"
+height="400" />
+</textarea>
+<br />The [RELATIVEpathTOdbinfoFILE] should be a relative filesystem file path to the database information file. This file path is relative to the location of the graph software and NOT the page which contains the IMG tag.
+    </p>
+</div>
+
+    <p>
+    <b>Database Connection Information</b><br />
+    This section contains 4 parameters which provide the graphing software with the necessary information to open a connection to the database. The parameters are:-
+    </p>
+    <ul>
+    <li>dbServer - database server location and port</li>
+    <li>dbUser - username the graph should use to connect to the database</li>
+    <li>dbPassword - password the graph should use to connect to the database</li>
+    <li>dbDatabase - the database name</li>
+    </ul>
+
+    e.g.<br />
+    <textarea class="jpcodeblock" style="height: 100px;">
+// Database Connection Info
+$jpDatabase["dbServer"]   = "localhost:3306";
+$jpDatabase["dbUser"]     = "[user]";
+$jpDatabase["dbPassword"] = "[paswword]";
+$jpDatabase["dbDatabase"] = "JPSAMPLEsalesDB";
+    </textarea>
+
+
+
+<div class="contentp">
+    <p>
+    <b>Data Queries</b><br />
+    The data query section contains the SQL the graph should issue to the database server to extract the data to be plotted. For each series of data
+    the graph needs to know:-</p>
+    <ul>
+    <li>The SQL Query</li>
+    <li>The name of the field(s) in the table/resultset to pick the value(s) from</li>
+    </ul>
+
+    For example if we have 3 series of data then the data query section would look like this:-
+<br />
+<textarea class="jpcodeblock" style="height: 180px;">
+// Data Queries
+$jpDatabase["data"] = array();
+
+$jpDatabase["data"][0]["query"]       = "SELECT numberA FROM table1 ";
+$jpDatabase["data"][0]["valueField"]  = "numberA";
+
+$jpDatabase["data"][1]["query"]       = "SELECT numberB FROM table2 ";
+$jpDatabase["data"][1]["valueField"]  = "numberB";
+
+$jpDatabase["data"][2]["query"]       = "SELECT numberC FROM table3 ";
+$jpDatabase["data"][2]["valueField"]  = "numberC";
+</textarea>
+<br />
+The above example will provide the graph with a single value for each data point. However some graph styles require 2 or 3 values (e.g. the X-Y scatter graph requires 2 values and the Bubble chart requires 3 values for each data point).
+For these graph styles the format would be like this:-
+<br />
+<textarea class="jpcodeblock" style="height: 270px; width: 700px;">
+// Data Queries
+$jpDatabase["data"] = array();
+
+$jpDatabase["data"][0]["query"]        = "SELECT numberA,numberB,numberC FROM table1 ";
+$jpDatabase["data"][0]["valueXField"]  = "numberA";
+$jpDatabase["data"][0]["valueYField"]  = "numberB";
+$jpDatabase["data"][0]["valueZField"]  = "numberC";
+
+$jpDatabase["data"][1["query"]        = "SELECT numberA,numberB,numberC FROM table2 ";
+$jpDatabase["data"][1]["valueXField"]  = "numberA";
+$jpDatabase["data"][1]["valueYField"]  = "numberB";
+$jpDatabase["data"][1]["valueZField"]  = "numberC";
+
+$jpDatabase["data"][2]["query"]        = "SELECT numberA,numberB,numberC FROM table3 ";
+$jpDatabase["data"][2]["valueXField"]  = "numberA";
+$jpDatabase["data"][2]["valueYField"]  = "numberB";
+$jpDatabase["data"][2]["valueZField"]  = "numberC";
+</textarea>
+
+<p><b>NOTE:</b> All PHP Global variables ($_REQUEST, $_GET, $_POST, $_SESSION etc) are available to be used within the database information file. For instance if
+you wish to dynamically construct a query based on the value of "userID" held in the session then you could do something like this:-
+<br />
+<textarea class="jpcodeblock" style="height: 50px; width: 700px;">
+$jpDatabase["data"][0]["query"] =
+"SELECT numberA,numberB,numberC FROM table1 WHERE userID=".$_SESSION["userID"];
+</textarea>
+</p>
+</div>
+
+<div class="contentp">
+    <p>
+    <b>Database Abstraction Code</b><br />
+    This parameter tells the graphing software to use database access methods located in the file specified.
+    The software will look for the file in the dir ./jpowered/graph/common/
+    Currently database methods are supplied for the MySQL database system and are located in the DBMySQL.class.php file. As such the
+    parameter should be set like this:-<br />
+    <textarea class="jpcodeblock" style="height: 50px;">
+// Abstraction Class
+$jpDatabase["abstractionClass"] = "DBMySQL.class.php";
+    </textarea>
+    </p>
+</div>
+
+
+
+<div class="contentp">
+<p>
+Putting it all together the database information file should look like this:-
+<br />
+<textarea class="jpcodeblock" style="height: 420px;">
+// Database Connection Info
+$jpDatabase["dbServer"]   = "localhost:3306";
+$jpDatabase["dbUser"]     = "[user]";
+$jpDatabase["dbPassword"] = "[paswword]";
+$jpDatabase["dbDatabase"] = "JPSAMPLEsalesDB";
+
+
+// Data Queries
+$jpDatabase["data"] = array();
+
+$jpDatabase["data"][0]["query"]       = "SELECT numberA FROM table1 ";
+$jpDatabase["data"][0]["valueField"]  = "numberA";
+
+$jpDatabase["data"][1]["query"]       = "SELECT numberB FROM table2 ";
+$jpDatabase["data"][1]["valueField"]  = "numberB";
+
+$jpDatabase["data"][2]["query"]       = "SELECT numberC FROM table3 ";
+$jpDatabase["data"][2]["valueField"]  = "numberC";
+
+
+// Abstraction Class
+$jpDatabase["abstractionClass"] = "DBMySQL.class.php";
+
+</textarea>
+
+</p>
+
+</div>
+
+<p>
+<a href="graphData.htm">&laquo; back to Graph Data</a>
+</p>
+
+<div class="contentp">
+<h3>Also see:-</h3>
+<p><a href="configurationOptions.htm">Configuration Options and Parameters &raquo;</a></p>
+</div>
+
+
+</div>
+
+<div class='grid_1'>&nbsp;</div>
+
+<div class='grid_3'>
+
+
+    <p><a href="../index.htm">Package Index</a></p>
+    <p><a href="../demo/index.htm">Demo Index</a></p>
+    <p><a href="../documentation/index.htm">Documentation</a></p>
+    <p><a href="../documentation/troubleShooting.htm">Troubleshooting Guide</a></p>
+    <p><a href="http://www.jpowered.com/support.htm">Support</a></p>
+
+
+    <h4>Documentation Contents</h4>
+    <p><a href="../documentation/addingGraphsToPages.htm">Adding Graphs to Web Pages</a></p>
+    <p><a href="../documentation/configurationOptions.htm">Configuration Options and Parameters</a></p>
+    <p><a href="../documentation/graphData.htm">Supplying the Graph with Data</a></p>
+    <p><a href="../documentation/sampleImageTags.htm">Sample Image Tags</a></p>
+
+
+    <h4>Database Connections</h4>
+    <p><a href="databaseInformationFile.htm">Database Information method</a></p>
+    <p><a href="customDataFunction.htm">Custom Data Function</a></p>
+
+    <p>&nbsp;</p>
+    <p><a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">more Documentation Online here</a></p>
+
+
+
+
+    <p>&nbsp;</p>
+</div>
+
+
+
+</div>
+
+<div class='footer'>
+
+<!-- bottom menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="../documentation/index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!--  footer -->
+<div class='container_12'>
+  <div class="grid_12 mc">[<a href="http://www.jpowered.com/"> JPowered.com </a>] [<a href="http://www.jpowered.com/products.htm" title="More software components for web applications"> More Products </a>] [<a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">Support </a>]</div>
+  <div class="grid_12 cprt">Copyright &copy; 2011 - 2014 Neutron Solutions Limited - All rights reserved.</div>
+</div>
+
+</div>
+
+</body>
+</html>

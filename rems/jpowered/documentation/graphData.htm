@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Advanced Graphs and Charts for PHP</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel=STYLESHEET type="text/css" href="../images/960.css" />
+<link rel=STYLESHEET type="text/css" href="../images/jpprodstyle.css" />
+</head>
+<body>
+
+<!-- Title area -->
+<div class='container_12 header'>
+  <div class='grid_4'>
+    <a href='http://www.jpowered.com'><img style='border-width: 0px;' src='../images/jpowered.gif' width='270' height='60' align='left' alt='JPowered.com' /></a>
+  </div>
+  <div class='grid_8 omega product_title'>
+    <h1>Advanced Graphs and Charts for PHP</h1>
+  </div>
+</div>
+
+<!-- top menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!-- main content -->
+<div class='container_12 main_content'>
+
+<div class='grid_8'>
+
+<div class="pgt"><h1>Graph Data</h1></div>
+
+
+<div class="contentp">
+    <div class="headinglarge">Overview</div>
+    <p>
+    Every graph requires the data to be plotted. The graphing software has been designed to take the data directly from the source and dynamically produce the graph image in real time.
+    The graphing software can be configured to read the data from a variety of sources including:-
+    </p>
+    <ul>
+    <li>Databases</li>
+    <li>Files</li>
+    <li>Other Server Side Processes</li>
+    </ul>
+    <p>( Note: further data access methods may have been added since this documentation was written, as such please also check the <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">online documentation here &raquo;</a> )</p>
+</div>
+
+<div class="contentp">
+    <div class="headinglarge">Data from Databases</div>
+    <p>
+    The graphing software provides two direct methods by which data can be read from databases:-
+    <br /><br />
+
+    <b>Custom Data Function</b><br /><br />
+    This method allows a custom data function to be constructed. At runtime the graphing software will dynamically include this function
+    and run it to produce the data.<br /><br />
+
+    If you need to dynamically construct the SQL Queries (e.g. depending on the value of SESSION or REQUEST variables) or you need to process the query results before plotting (e.g. averaging a data set) then this is the method to use.<br /><br />
+    <a href="customDataFunction.htm">more &raquo;</a>
+
+
+    <br /><br />
+    <b>Database Information File</b><br /><br />
+    With this method the database information file will contain the necessary information for the graphng software to connect to your database and the queries to run for each data series.
+    At runtime the graphing software will read this file, connect to the database and execute each of the queries. It will then automatically extract the data from the result set(s) for plotting on the graph.
+    <a href="databaseInformationFile.htm">more &raquo;</a>
+
+    </p>
+
+<p>Further information and examples can found in the <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/">Online Tutorials here &raquo;</a></p>
+</div>
+
+
+<div class="contentp">
+    <div class="headinglarge">Data from Files</div>
+    <p>
+    If the data is fairly static then you may wish to place the data in a flat file. In this case the graphing software is configured to read the data from that file.<br /><br />
+
+    To set the graph to read the data from file simply add the &quot;<b>data</b>&quot;
+    parameter to the URL string of the &lt;IMG&gt; tag. For example if the data file is &quot;graphdata.txt&quot;
+    then your &lt;IMG&gt; tag would become:-
+
+<textarea class="jpcodeblock">
+&lt;img src=&quot;line-graph.php?data=graphdata.txt&quot;
+width=500 height=500&gt;
+</textarea>
+
+<b>Data Format</b>
+Within the file the data should follow this format:-
+<blockquote>
+<b>data<font color="#0000CC">N</font>series<font color="#0000CC">M</font>: <font color="#CC0033">[value]</font></b>
+</blockquote>
+where<br />
+<b><font color="#0000CC">N</font></b> represents the position of the data item in the series and<br />
+<font color="#0000CC"><b>M</b></font> represents the series number.<br /><br />
+
+For example for 3 series of data each containing 6 points the contents of the data file would be:-
+<textarea class="jpcodeblock">
+data1series1: 30
+data2series1: 20
+data3series1: -10
+data4series1: 40
+data5series1: 50
+data6series1: 60
+
+data4series2: 40
+data5series2: 50
+data6series2: 60
+
+data1series3: 100
+data2series3: 50
+data3series3: -25
+data4series3: 75
+data5series3: 125
+data6series3: 150
+</textarea>
+
+    </p>
+
+</div>
+
+
+<div class="contentp">
+    <div class="headinglarge">Other Server Side Processes</div>
+    <p>
+The graph data can be set to call another server process and request the data. This can be a script in any language and does not necessarily have to reside on the same server. The only stipulation is that the process is accessible via a URL.<br /><br />
+The script or process can be written to perform any processing required including connecting to any database system. For example if your data is held in MS SQL Server or Oracle then an ASP script would be written to extract the data from the database
+and output in the format required for the graph. At runtime the graphing software will call the script which in turn will read the data from the database and output the data back to the graphing software where it is plotted directly on the graph.<br /><br />
+
+To set the graph to read the data from another server side process (ie. PHP, ASP, JSP etc) simply add the &quot;<b>data</b>&quot; parameter to the URL string of the &lt;IMG&gt; tag. <br />
+For example if the data script is &quot;graphdata.php&quot; then your
+&lt;IMG&gt; tag would become:-
+
+<textarea class="jpcodeblock">
+&lt;img
+src=&quot;line-graph.php?
+<font color="#CC0000">data=graphdata.php</font>&quot;
+width=500 height=500&gt;
+</textarea>
+
+<b>Data Format</b>
+The data script should be written such that it outputs the data in the following format:-
+<blockquote>
+<b>data<font color="#0000CC">N</font>series<font color="#0000CC">M</font>: <font color="#CC0033">[value]</font></b>
+</blockquote>
+where<br />
+<b><font color="#0000CC">N</font></b> represents the position of the data item in the series and<br />
+<font color="#0000CC"><b>M</b></font> represents the series number.<br /><br />
+
+
+For example for 3 series of data each containing 6 points the output of the data script would be:-
+<textarea class="jpcodeblock">
+data1series1: 30
+data2series1: 20
+data3series1: -10
+data4series1: 40
+data5series1: 50
+data6series1: 60
+
+data4series2: 40
+data5series2: 50
+data6series2: 60
+
+data1series3: 100
+data2series3: 50
+data3series3: -25
+data4series3: 75
+data5series3: 125
+data6series3: 150
+</textarea>
+    </p>
+
+<p>Further information and examples can found in the <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/">Online Tutorials here &raquo;</a></p>
+
+
+</div>
+
+<div class="contentp">
+<h3>Also see:-</h3>
+<p><a href="configurationOptions.htm">Configuration Options and Parameters &raquo;</a></p>
+</div>
+
+</div>
+
+<div class='grid_1'>&nbsp;</div>
+
+<div class='grid_3'>
+
+
+    <p><a href="../index.htm">Package Index</a></p>
+    <p><a href="../demo/index.htm">Demo Index</a></p>
+    <p><a href="../documentation/index.htm">Documentation</a></p>
+    <p><a href="../documentation/troubleShooting.htm">Troubleshooting Guide</a></p>
+    <p><a href="http://www.jpowered.com/support.htm">Support</a></p>
+
+
+    <h4>Documentation Contents</h4>
+    <p><a href="../documentation/addingGraphsToPages.htm">Adding Graphs to Web Pages</a></p>
+    <p><a href="../documentation/configurationOptions.htm">Configuration Options and Parameters</a></p>
+    <p><a href="../documentation/graphData.htm">Supplying the Graph with Data</a></p>
+    <p><a href="../documentation/sampleImageTags.htm">Sample Image Tags</a></p>
+
+
+    <h4>Database Connections</h4>
+    <p><a href="databaseInformationFile.htm">Database Information method</a></p>
+    <p><a href="customDataFunction.htm">Custom Data Function</a></p>
+
+    <p>&nbsp;</p>
+    <p><a href="http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/">more Documentation Online here</a></p>
+
+
+
+
+    <p>&nbsp;</p>
+</div>
+
+
+
+</div>
+
+<div class='footer'>
+
+<!-- bottom menu bar -->
+<div class='container_12'>
+    <div class='grid_12 innm'>
+    <ul>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/">Graph Home</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/buy-now.htm" title="Pricing Options and obtaining License keys">Pricing / License Options</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/demos/" title="View the Online Demos here">Online Demos</a> </li>
+    <li> <a href="../documentation/index.htm">Documentation</a> </li>
+    <li> <a href="http://www.jpowered.com/php-scripts/adv-graph-chart/tutorials/" title="Online Tutorials">Tutorials</a> </li>
+    </ul>
+    </div>
+</div>
+
+<!--  footer -->
+<div class='container_12'>
+  <div class="grid_12 mc">[<a href="http://www.jpowered.com/"> JPowered.com </a>] [<a href="http://www.jpowered.com/products.htm" title="More software components for web applications"> More Products </a>] [<a href="http://www.jpowered.com/support.htm" title="For Help and Support, contact us here">Support </a>]</div>
+  <div class="grid_12 cprt">Copyright &copy; 2011 - 2014 Neutron Solutions Limited - All rights reserved.</div>
+</div>
+
+</div>
+
+</body>
+</html>

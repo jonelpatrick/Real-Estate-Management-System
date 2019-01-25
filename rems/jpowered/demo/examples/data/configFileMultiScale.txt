@@ -1,0 +1,97 @@
+/* --------------------------------------------------------------------------------------------- */
+/*                                                                                               */
+/* For the full range of options and parameter meanings please see:-                             */
+/*                                                                                               */
+/* http://www.jpowered.com/php-scripts/adv-graph-chart/documentation/configurationOptions.htm    */
+/*                                                                                               */
+/* --------------------------------------------------------------------------------------------- */
+
+width:  700
+height: 400
+
+series1:           orange|Value of Sales|left|
+series2:           #9999ff|Sales Volume|right|
+
+outline:           true
+gradientfill:      true
+backgroundcolor:   white
+
+grid:              true
+axis:              true
+3d:                true
+depth3d:           20
+vspace:            25
+nrows:             10
+ndecplaces:        0
+barwidth:          50
+barspacing:        10
+
+gridbgcolor:       #aaffaa
+axiscolor:         dark grey
+floorcolor:        light gray
+gridcolor:         grey
+gridstyle:         dotted
+
+titletext:         Volume and Values of Sales
+titlefont:         Arial
+titlefontsize:     12
+titlefontbold:     true
+titlefontitalic:   false
+titlecolor:        #555555
+titleposition:     -1,50
+
+xtitletext:        
+xtitlefont:        Arial
+xtitlefontsize:    11
+xtitlefontbold:    true
+xtitlefontitalic:  false
+xtitlecolor:       #993333
+
+ytitletext:        Value
+ytitlefont:        Arial
+ytitlefontsize:    11
+ytitlefontbold:    true
+ytitlefontitalic:  false
+ytitlecolor:       #555555
+
+y2titletext:        Volume
+y2titlefont:        Arial
+y2titlefontsize:    11
+y2titlefontbold:    true
+y2titlefontitalic:  false
+y2titlecolor:       #555555
+
+xlabels:           Quarter 1|Quarter 2|Quarter 3|Quarter 4
+xlabelorientation: Down Angle
+xlabeloffset:      0
+xlabelfont:        Arial
+xlabelfontsize:    10
+xlabelfontbold:    false
+xlabelfontitalic:  false
+xlabelcolor:       #993333
+
+ylabels:           true
+ylabelfont:        Arial
+ylabelfontsize:    9
+ylabelfontbold:    false
+ylabelfontitalic:  false
+ylabelcolor:       #333333
+ylabelpost:        
+ylabelpre:         $ 
+
+y2labels:          true
+y2labelfont:       Arial
+y2labelfontsize:   9
+y2labelfontbold:   false
+y2labelfontitalic: false
+y2labelcolor:      #000088
+y2labelpost:      
+y2labelpre: 
+
+
+
+legend:            false
+legendfont:        Arial
+legendfontsize:    10
+legendfontbold:    false
+legendfontitalic:  true
